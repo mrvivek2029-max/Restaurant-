@@ -1,0 +1,51 @@
+/* CSS Custom Properties for better performance and maintainability */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --background-color: #f8f9fa;
+  --border-color: #ddd;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Optimized selectors - avoid deep nesting */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+/* Use will-change for animations */
+.animated {
+  will-change: transform, opacity;
+}
+
+/* Optimize for mobile first */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
